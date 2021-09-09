@@ -1,0 +1,25 @@
+
+{% extends "my_blog/my_blog.html" %}
+{% load static %}
+
+{% block content %}
+
+
+<h2 xmlns="http://www.w3.org/1999/html"> {{ details.title }} </h2>
+
+<h4>
+
+   </br> {{ details.body|linebreaks }}
+   </br>
+
+</h4>
+<h5>
+
+   Autor: {{ details.author }}
+   </br>
+
+</h5>
+<h5>
+   Publish data: {{ details.publish }}
+</h5>
+{% endblock %}

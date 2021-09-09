@@ -1,0 +1,18 @@
+{% extends "my_blog/my_blog.html" %}
+{% load static %}
+
+{% block content %}
+
+<h3>Lista Postów</h3>
+{% for post in posts %}
+
+<h4>
+    <a href ="{{ post.get_absolute_url }}" class="list_to_detail">
+        {{ post.title }}
+    </a>
+</h4>
+
+
+{% endfor %}
+
+{% endblock %}
