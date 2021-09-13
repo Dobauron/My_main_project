@@ -1,4 +1,5 @@
 from django.contrib import admin
 from .models import Question, Anwsers
 # Register your models here.
-admin.site.register(Question, Anwsers)
+admin.site.register(Question)
+admin.site.register(Anwsers)
