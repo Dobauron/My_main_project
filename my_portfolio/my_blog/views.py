@@ -7,7 +7,7 @@ from taggit.models import Tag
 
 
 def post_list(request, tag_slug=None):
-
+    Tags = Tag.objects.all()
     posts = Post.objects.all()
     tag = None
     if tag_slug:
@@ -17,7 +17,8 @@ def post_list(request, tag_slug=None):
     return render(request,
                   'my_blog/posts/post_list.html',
                   {'posts': posts,
-                   'tag': tag})
+                   'tag': tag,
+                   'Tags': Tags})
     #take all object's parameter
 
 

@@ -15,12 +15,14 @@
 </div>
 <div class="tag_sidebar">
     <h2>Most common tags</h2>
+    {% for tag in Tags %}
+        <h4>
+            <a href ="{% url "my_blog:post_list_by_tag" tag.slug %}">
+               {{ tag.name }}
+            </a>
+        </h4>
 
-        </br>
-        {% for tag in tag %}
-                {{ tag.name }}
-
-        {% endfor %}
+    {% endfor %}
 
 </div>
 <div style="clear:both;"></div>
