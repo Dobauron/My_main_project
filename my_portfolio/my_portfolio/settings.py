@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'my_blog.apps.MyBlogConfig',
     'traveler_games.apps.TravelerGamesConfig',
     'my_polls.apps.MyPollsConfig',
+    'taggit'
 ]
 
 MIDDLEWARE = [

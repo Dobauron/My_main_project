@@ -37,7 +37,7 @@ font-family: 'Josefin Sans', sans-serif;
 font-size:50px;
 width:780px;
 text-align:center;
-text-decoration:none;
+text-decoration: none;
 
 }
 
@@ -70,6 +70,14 @@ a.transfer
 color:#ffffff;
 text-decoration:none;
 display:block;
-width:300px;
-height:179px;
+
+}
+
+.tag_sidebar
+{
+background-color:#ffffff;
+float:left;
+width:100px;
+margin:20px;
+height:auto;
 }

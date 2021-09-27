@@ -2,17 +2,38 @@ from django.shortcuts import render, get_object_or_404
 from .models import Post, Comment
 from django.views.generic import ListView
 from .forms import CommentForm
+from taggit.models import Tag
 # Create your views here.
 
 
-def post_list(request):
+def post_list(request, tag_slug=None):
+
     posts = Post.objects.all()
-    #take all object's parameter
+    tag = None
+    if tag_slug:
+        tag = get_object_or_404(Tag, slug=tag_slug)
+        posts = posts.filter(tags__in=[tag])
 
     return render(request,
                   'my_blog/posts/post_list.html',
-                  {'posts': posts})
+                  {'posts': posts,
+                   'tag': tag})
+    #take all object's parameter
+
+
     #return site with |post| data from data base
+
+# def tag_list(request, tag_slug=None):
+#     posts= Post.objects.all()
+#     tag = None
+#     if tag_slug:
+#         tag = get_object_or_404(Tag, slug=tag_slug)
+#         posts = posts.filter(tags__in=[tag])
+#
+#     return render(request,
+#                   'my_blog/posts/post_tag.html',
+#                   {'posts': posts,
+#                    'tag': tag})
 
 class PostListView(ListView):
     queryset = Post.published.all()

@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta name="author" content="Dobromir Matuszak"/>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/base.css' %}" type="text/css"/>
+    <link rel="stylesheet" href="{% static 'css/based.css' %}" type="text/css"/>
     <link rel="stylesheet" href="{% static "css/fontello/css/fontello.css" %}" type="text/css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://font's.gstatic.com" crossorigin>
@@ -21,8 +21,11 @@
 <div id="container">
 
     <div class="rectangle">
-        <div id="logo"><i class="icon-blogger"></i>
-            log</div>
+
+        <div id="logo">
+            <a href="http://127.0.0.1:8000/blog" class="transfer"><i class="icon-blogger"></i>
+            log</a></div>
+
         <div id="time">12:00:00</div>
         <div style="clear:both;"></div>
     </div>
@@ -31,6 +34,7 @@
         {% block content %}
         {% endblock %}
     </div>
+
     <div style="clear:both;"></div>
 
     <div class="rectangle">
