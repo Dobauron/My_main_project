@@ -12,12 +12,14 @@
         </a>
     </h4>
     {% endfor %}
+    {% include "paginator.html" with page=posts %}
+
 </div>
 <div class="tag_sidebar">
     <h2>Most common tags</h2>
     {% for tag in Tags %}
         <h4>
-            <a href ="{% url "my_blog:post_list_by_tag" tag.slug %}">
+            <a href ="{% url "my_blog:post_list_by_tag" tag.slug %}" class="transfer">
                {{ tag.name }}
             </a>
         </h4>
@@ -25,6 +27,7 @@
     {% endfor %}
 
 </div>
+
 <div style="clear:both;"></div>
 
 

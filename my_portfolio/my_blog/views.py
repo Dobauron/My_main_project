@@ -3,6 +3,7 @@ from .models import Post, Comment
 from django.views.generic import ListView
 from .forms import CommentForm
 from taggit.models import Tag
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 # Create your views here.
 
 
@@ -13,12 +14,20 @@ def post_list(request, tag_slug=None):
     if tag_slug:
         tag = get_object_or_404(Tag, slug=tag_slug)
         posts = posts.filter(tags__in=[tag])
-
+    paginator = Paginator(posts, 3)
+    page = request.GET.get('page')
+    try:
+        posts = paginator.page(page)
+    except PageNotAnInteger:
+        posts = paginator.page(1)
+    except EmptyPage:
+        posts = paginator.page(paginator.num_pages)
     return render(request,
                   'my_blog/posts/post_list.html',
                   {'posts': posts,
                    'tag': tag,
-                   'Tags': Tags})
+                   'Tags': Tags,
+                   'page': page})
     #take all object's parameter
 
 
@@ -40,7 +49,7 @@ class PostListView(ListView):
     queryset = Post.published.all()
     context_object_name = 'posts'
 
-    paginate_by = 5
+    paginate_by = 2
     template_name = 'my_blog/posts/post_list.html'
 
 
