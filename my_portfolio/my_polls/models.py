@@ -11,12 +11,9 @@ class Question(models.Model):
     def __str__(self):
         return self.question
 
-class Anwsers(models.Model):
-
+class Answer(models.Model):
     answer = models.ForeignKey(Question,
-                                on_delete=models.CASCADE,
-                                related_name= 'polls_answ')
-
+                                on_delete=models.CASCADE)
     pub_date = models.DateTimeField(auto_now=True)
 
     def __str__(self):

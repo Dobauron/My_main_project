@@ -26,7 +26,7 @@ class Land(models.Model):
     name = models.CharField(max_length=100)
     type = models.CharField(max_length=100)
     enterance_cost = models.IntegerField()
-    monster_set = models.ManyToManyField(Monster, on_delete=models.CASCADE)
+    monster_set = models.ManyToManyField(Monster)
 #     story_set
 
 
@@ -36,7 +36,7 @@ class Player(models.Model):
     inteligence = models.IntegerField()
     strengh = models.IntegerField()
     dextrity = models.IntegerField()
-    localization = models.ForeignKey(Land, on_delete=models.SET_NULL)
+    localization = models.ForeignKey(Land, on_delete=models.CASCADE)
     damage = models.IntegerField()
     health_point = models.IntegerField()
     travel_sustain = models.IntegerField()
