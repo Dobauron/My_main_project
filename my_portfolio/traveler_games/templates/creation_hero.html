@@ -1,0 +1,20 @@
+{% load static %}
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Name your champ!</h1>
+{% for play in player %}
+    <h2>{{ play.damage }}</h2>
+        <form action="" method="post">
+          {{ name_form.as_p }}
+          {% csrf_token %}
+          <p><input type="submit" value="Podaj imię przywoływaczu"></p>
+        </form>
+{% endfor %}
+</body>
+</html>

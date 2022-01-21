@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta name="author" content="Dobromir Matuszak"/>
 
-    <link rel="stylesheet" href="{% static 'css/main.css' %}" type="text/css"/>
+    <link rel="stylesheet" href="{% static 'css/basic.css' %}" type="text/css"/>
     <link rel="stylesheet" href="{% static 'css/fontello/css/fontello.css' %}" type="text/css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://font's.gstatic.com" crossorigin>
@@ -57,15 +57,16 @@
         <div style="clear:both;"></div>
 
         <div class="tile4">
-            <i class="icon-gamepad"></i>
+            <a href="{% url 'traveler_games:creation_hero' %}" target="_blank" class="transfer2"><i class="icon-gamepad"></i>
             </br>
             Traveler
+            </a>
         </div>
 
     </div>
 
     <div class="square">
-        <div class="tile5">Technology and source used
+        <div class="tile5">Technologies and sources used for current project
             </br>
             <div class="tools1">
                 <i class="icon-css"></i>
