@@ -5,9 +5,9 @@ from .models import Player,Monster,Land,Item
 @admin.register(Land)
 class LandAdmin(admin.ModelAdmin):
     list_display = ('name','type', 'enterance_cost')
-# @admin.register(Player)
-# class PlayerAdmin(admin.ModelAdmin):
-#
+@admin.register(Player)
+class PlayerAdmin(admin.ModelAdmin):
+    list_display = ('users', 'name','inteligence', 'strengh', 'dextrity', 'damage','health_point', 'travel_sustain')
 @admin.register(Monster)
 class MonsterAdmin(admin.ModelAdmin):
     list_display = ('name','type',  'inteligence', 'strengh', 'dextrity','damage','health_point',)

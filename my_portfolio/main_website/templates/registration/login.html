@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="{% static "css/basic.css" %}" rel="stylesheet">
+</head>
+<body>
+<div class="log">
+    <h2>Ekran logowania</h2>
+    {% if form.errors %}
+        <p>
+            Nazwa użytkownika lub hasło jest niepoprawne.
+            Spróbuj ponownie
+
+        </p>
+    {% else %}
+        <p>Wypełnij poniższy formularz, aby się zalogować:</p>
+    {% endif %}
+    <form action="{% url 'loginview' %}" method="post">
+        {{ form.as_p }}
+        {% csrf_token %}
+        <input type="hidden" name="next" value="{{ next }}" />
+        <p><input type="submit" value="Zaloguj"</p>
+
+    </form>
+</div>
+
+<div style="clear:both;"></div>
+
+
+
+
+</body>
+</html>

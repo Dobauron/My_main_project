@@ -25,6 +25,17 @@ width:50%;
 float:left;
 }
 
+
+.log
+{
+width: 100%;
+height: 50%;
+text-align:center;
+margin-top:300px;
+
+}
+
+
 #logo
 {
 float:left;
@@ -35,14 +46,15 @@ margin-top:10px;
 margin-bottom:10px;
 }
 
-#time
+
+#login/out
 {
 float:left;
 font-family: 'Josefin Sans', sans-serif;
 font-size:70px;
-margin-top:10px;
+margin-left:500px;
+margin-top:50px;
 margin-bottom:10px;
-
 }
 
 .tile1
@@ -182,4 +194,13 @@ text-decoration: none;
 display:block;
 width:auto-center;
 height:auto-center;
+}
+
+input[type=submit], a.button {
+    font-weight:bold;
+    background:#12c064;
+    color:#fff;
+    padding:10px 20px;
+    font-size:14px;
+    text-transform:uppercase;
 }

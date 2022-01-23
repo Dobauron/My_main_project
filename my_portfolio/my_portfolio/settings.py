@@ -27,21 +27,23 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["localhost", "127.0.0.1", "dobmat-portfolio.com", "www.dobmat-portfolio.com" ]
 
-
+LOGIN_REDIRECT_URL = 'index'
+LOGIN_URL = 'loginview'
+LOGOUT_URL = 'logoutview'
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
+    'main_website.apps.MainWebsiteConfig',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'main_website.apps.MainWebsiteConfig',
     'my_blog.apps.MyBlogConfig',
     'traveler_games.apps.TravelerGamesConfig',
     'my_polls.apps.MyPollsConfig',
-    'taggit'
+    'taggit',
+    'django.contrib.auth',
+    'django.contrib.admin',
 ]
 
 MIDDLEWARE = [
@@ -135,3 +137,5 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
