@@ -4,12 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link href="{% static "css/main.css" %}" rel="stylesheet">
+    <link href="{% static "css/basic.css" %}" rel="stylesheet">
 </head>
 <body>
-
 <div class="log">
-
     <h2>Ekran logowania</h2>
     {% if form.errors %}
         <p>
@@ -24,13 +22,12 @@
         {{ form.as_p }}
         {% csrf_token %}
         <input type="hidden" name="next" value="{{ next }}" />
-        <p><input type="submit" value="Zaloguj"></p>
+        <p><input type="submit" value="Zaloguj"</p>
 
     </form>
-{% block content %}
-{% endblock %}
+    {% block context %}
+    {% endblock %}
 </div>
-
 
 <div style="clear:both;"></div>
 

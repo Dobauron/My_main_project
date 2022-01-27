@@ -1,7 +1,8 @@
 from django.shortcuts import render, get_object_or_404
 from . models import Player
 from django.views.generic import DetailView
-from . forms import NameForm
+from . forms import PlayerForm
+from django.contrib.auth.models import User
 
 # Create your views here.
 #
@@ -9,19 +10,17 @@ from . forms import NameForm
 #     queryset = Player.objects.all()
 
 def travel_view(request):
-    player = Player.objects.filter(id=1)
-
 
     if request.method == 'POST':
-        name_form = NameForm(data=request.POST)
-        if name_form.is_valid():
-            new_name = name_form.save(commit=False)
+        player_form = PlayerForm(data=request.POST)
+        if player_form.is_valid():
 
-            new_name.save()
+            player= player_form.save(commit=False)
+
+
     else:
-        name_form = NameForm()
+        player_form = PlayerForm()
     return render(request,
                   'creation_hero.html',
-                  {'player' : player,
-                   'name_form' : name_form,})
+                  {'player_form' : player_form,})
 

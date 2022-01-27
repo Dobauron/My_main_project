@@ -41,12 +41,12 @@ class Land(models.Model):
 
 
 class Player(models.Model):
-    users = models.ForeignKey(User, on_delete=models.CASCADE)
+    users = models.OneToOneField(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=50, default='')
     inteligence = models.IntegerField(default=3)
     strengh = models.IntegerField(default=3)
     dextrity = models.IntegerField(default=3)
-    localization = models.ForeignKey(Land, on_delete=models.CASCADE, default=id(1))
+    location = models.ForeignKey(Land, on_delete=models.CASCADE, default=id(1))
     damage = models.IntegerField(default=7)
     health_point = models.IntegerField(default=20)
     travel_sustain = models.IntegerField(default=10)

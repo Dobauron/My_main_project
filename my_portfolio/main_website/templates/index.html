@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta name="author" content="Dobromir Matuszak"/>
 
-    <link rel="stylesheet" href="{% static 'css/new.css' %}" type="text/css"/>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" type="text/css"/>
     <link rel="stylesheet" href="{% static 'css/fontello/css/fontello.css' %}" type="text/css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://font's.gstatic.com" crossorigin>
@@ -27,7 +27,7 @@
                 Witaj, {{ request.user }}!
                 <a href=" {% url 'logoutview' %}" class="transfer_login_out">Wyloguj</a>
             {% else %}
-                <a href=" {% url 'loginview' %}" class="transfer_login_out"><h3>Logowanie</h3></a>
+                <a href=" {% url 'loginview' %}" class="transfer_login_out">Logowanie</a>
             {% endif %}
 
         </div>
@@ -72,8 +72,9 @@
     </div>
 
     <div class="square">
-        <div class="tile5">Technologies and sources used for current project
-            </br>
+
+        <div class="tile5"></br>Technologies and sources used for current project
+            </br></br>
             <div class="tools1">
                 <i class="icon-css"></i>
                   Css3
@@ -93,7 +94,7 @@
             </div>
             <div class="tools2">
                 <img src="{% static 'css/img/sql.png' %}">
-                Sqlite3
+                Postgresql
             </div>
         </div>
 

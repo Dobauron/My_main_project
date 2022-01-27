@@ -7,13 +7,16 @@
     <title>Title</title>
 </head>
 <body>
-<h1>Name your champ!</h1>
+{% if request.user.is_authenticated %}
+    <h1>Name your champ!</h1>
 
         <form action="" method="post">
-          {{ name_form.as_p }}
+          {{ player_form.as_p }}
           {% csrf_token %}
           <p><input type="submit" value="Podaj imię przywoływaczu"></p>
         </form>
-
+{% else %}
+    <a href=" {% url 'loginview' %}" class="transfer_login_out"><h3>Logowanie</h3></a>
+{% endif %}
 </body>
 </html>

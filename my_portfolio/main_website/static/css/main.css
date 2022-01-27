@@ -47,15 +47,6 @@ margin-bottom:10px;
 }
 
 
-.login_out
-{
-float:left;
-font-family: 'Josefin Sans', sans-serif;
-font-size:70px;
-margin-left:500px;
-margin-top:50px;
-margin-bottom:10px;
-}
 
 .tile1
 {
@@ -104,7 +95,7 @@ background-color:#405050;
 .tile4
 {
 margin:10px;
-width:300px;
+width:620px;
 height:179px;
 text-align:center;
 background-color:#ff9000;
@@ -192,9 +183,29 @@ a.transfer2
 color:#ffffff;
 text-decoration: none;
 display:block;
+width:620px;
+height:179px;
+}
 
+
+a.transfer_login_out
+{
+
+color:#ffffff;
+text-decoration: none;
 
 }
+
+.login_out
+{
+float:left;
+font-family: 'Josefin Sans', sans-serif;
+font-size:20px;
+margin-left:210px;
+margin-top:50px;
+margin-bottom:10px;
+}
+
 
 input[type=submit], a.button {
     font-weight:bold;
