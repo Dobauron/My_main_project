@@ -1,18 +1,35 @@
 from django.shortcuts import render
 from .forms import UserRegistrationForm
 from django.contrib.auth.decorators import login_required
+from django.views.generic import ListView
+from django.contrib.auth import authenticate, login
+
+from django.contrib.auth import views
+from django.http import HttpResponse
+from django import forms
 # Create your views here.
 app_name = "main_website"
 
-def Who_amI(request):
-    return render(request, 'Who_amI.html')
+class pcd(views.PasswordChangeView):
+    template_name = 'password_change_done.html'
+    app_name = "main_website"
+
+class Who_amI(ListView):
+    template_name = 'Who_amI.html'
+    queryset = []
 
 
-def index(request):
+
+class index(ListView):
+    template_name = "index.html"
+    queryset = []
+
+@login_required
+def dashboard(request):
     return render(request,
-                  'index.html',
-                  {'section' : 'index'}
-                )
+                'registration/dashboard.html',
+                {'section': 'dashboard'})
+
 
 def register(request):
     if request.method == 'POST':
@@ -25,5 +42,3 @@ def register(request):
     else:
         user_form = UserRegistrationForm()
     return render(request, 'account/register.html', {'user_form': user_form})
-
-

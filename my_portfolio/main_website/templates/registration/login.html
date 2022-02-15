@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Logowanie</title>
     <link href="{% static "css/main.css" %}" rel="stylesheet">
 </head>
 <body>
@@ -20,15 +20,13 @@
     {% else %}
         <p>Wypełnij poniższy formularz, aby się zalogować:</p>
     {% endif %}
-    <form action="{% url 'loginview' %}" method="post">
+    <form action="{% url 'main_website:login' %}" method="post">
         {{ form.as_p }}
         {% csrf_token %}
         <input type="hidden" name="next" value="{{ next }}" />
         <p><input type="submit" value="Zaloguj"></p>
-
     </form>
-{% block content %}
-{% endblock %}
+    <p><a href="{% url 'main_website:password_reset' %}" class="transfer_login_out">Zapomniałeś hasła? Tutaj możesz je wyzerować</a></p>
 </div>
 
 

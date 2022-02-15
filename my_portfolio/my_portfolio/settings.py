@@ -27,9 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["localhost", "127.0.0.1", "dobmat-portfolio.com", "www.dobmat-portfolio.com" ]
 
-LOGIN_REDIRECT_URL = 'index'
-LOGIN_URL = 'loginview'
-LOGOUT_URL = 'logoutview'
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -138,4 +136,8 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+LOGIN_URL= 'main_website:login'
+LOGOUT_URL = 'main_website:logout'
+LOGIN_REDIRECT_URL = 'main_website:index'
 
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

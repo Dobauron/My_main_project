@@ -24,10 +24,11 @@
         <div id="logo">Dobromir Matuszak</div>
         <div class="login_out">
             {% if request.user.is_authenticated %}
-                Witaj, {{ request.user }}!
-                <a href=" {% url 'logoutview' %}" class="transfer_login_out">Wyloguj</a>
+
+                Witaj, <a href="{% url 'main_website:dashboard' %}" class="transfer_login_out"> {{ request.user }}</a>!
+                <a href="{% url 'main_website:logout' %}" class="transfer_login_out">Wyloguj</a>
             {% else %}
-                <a href=" {% url 'loginview' %}" class="transfer_login_out">Logowanie</a>
+                <a href="{% url 'main_website:login' %}" class="transfer_login_out">Logowanie</a>
             {% endif %}
 
         </div>
@@ -37,7 +38,7 @@
     <div class="square">
 
         <div class="tile1">
-            <a href="{% url 'Who_amI' %}" target="_blank" class="transfer"><i class="icon-user"></i></br>Who am I?</a>
+            <a href="{% url 'main_website:Who_amI' %}" target="_blank" class="transfer"><i class="icon-user"></i></br>Who am I?</a>
 
 
         </div>
